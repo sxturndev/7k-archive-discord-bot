@@ -1,0 +1,26 @@
+{
+  "name": "7k-archive-discord-bot",
+  "version": "1.0.0",
+  "description": "A discord bot created for the 7k archive.",
+  "main": "index.js",
+  "dependencies": {
+    "@discordjs/builders": "^0.12.0",
+    "@discordjs/rest": "^0.3.0",
+    "discord-api-types": "^0.27.1",
+    "discord.js": "^13.6.0",
+    "dotenv": "^16.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sxturndev/7k-archive-discord-bot.git"
+  },
+  "author": "sxturndev",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sxturndev/7k-archive-discord-bot/issues"
+  },
+  "homepage": "https://github.com/sxturndev/7k-archive-discord-bot#readme"
+}
