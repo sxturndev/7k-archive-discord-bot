@@ -7,7 +7,7 @@ A discord.js v13 bot created for the [7k archive.](https://discord.gg/XCV3bs7RFt
 
 - [ ] Google Sheets Integration
   - Add, delete, and retrieve information from Google Sheets through the bot.
-- [x] Ranked/Loved map feed for 6k+
+- [x] Ranked/Loved map feed for 6k+ [osu!api v1](https://github.com/ppy/osu-api/wiki)
 - [ ] FAQ Embeds
 - [ ] NPS Graph/Statistics for uploaded .osu files.
 - [ ] [Beatconnect.io](https://beatconnect.io/) integration, for searching beatmaps. (?)
