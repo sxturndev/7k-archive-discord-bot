@@ -13,7 +13,7 @@ module.exports = {
         ephemeral: true,
       });
     }
-    interaction.reply({
+    await interaction.reply({
       content: "Killing process, bot should automatically restart...",
       ephemeral: true,
     });

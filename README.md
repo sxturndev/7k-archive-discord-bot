@@ -18,8 +18,8 @@ A discord.js v13 bot created for the [7k archive.](https://discord.gg/XCV3bs7RFt
 - [ ] Twitch Notifications (?)
 
 ### Misc/Useful Commands
-- [ ] /stats - Display an embed about bot statistics e.g. uptime & resource usage.
-- [ ] /invite - Returns an invite link to the server.
+- [x] /stats - Display an embed about bot statistics e.g. uptime & resource usage.
+- [x] /invite - Returns an invite link to the server.
 - [ ] /archive - Privates a channel and moves it to the bottom of the channel list.
 ---
 
