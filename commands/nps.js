@@ -6,10 +6,15 @@ const { MessageAttachment } = require("discord.js");
 module.exports = {
   data: new SlashCommandBuilder()
     .setName("nps")
-    .setDescription("(Disabled) Returns a nps graph and stats given a .osu file."),
+    .setDescription(
+      "(Disabled) Returns a nps graph and stats given a .osu file."
+    ),
   async execute(interaction) {
     // Disable this because it's not finished yet
-    return interaction.reply({ content: 'Disabled until finished.', ephemeral: true });
+    return interaction.reply({
+      content: "Disabled until finished.",
+      ephemeral: true,
+    });
 
     const channel = interaction.channel;
 
