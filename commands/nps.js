@@ -6,8 +6,11 @@ const { MessageAttachment } = require("discord.js");
 module.exports = {
   data: new SlashCommandBuilder()
     .setName("nps")
-    .setDescription("Returns a nps graph and stats given a .osu file."),
+    .setDescription("(Disabled) Returns a nps graph and stats given a .osu file."),
   async execute(interaction) {
+    // Disable this because it's not finished yet
+    return interaction.reply({ content: 'Disabled until finished.', ephemeral: true });
+
     const channel = interaction.channel;
 
     function download(attachment) {
@@ -58,7 +61,7 @@ module.exports = {
     }
 
     interaction
-      .reply({ content: "Please upload a .osu file.", empheral: true })
+      .reply({ content: "Please upload a .osu file.", ephemeral: true })
       .then(() => {
         const filter = (m) => interaction.user.id === m.author.id;
 
