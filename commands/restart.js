@@ -19,7 +19,7 @@ module.exports = {
     });
     interaction.client.destroy();
     console.log("client destroyed");
-    // force exit
+    // force exit, bot will restart with pm2
     process.exit();
   },
 };

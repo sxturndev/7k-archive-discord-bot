@@ -5,8 +5,6 @@ require("dotenv").config();
 const token = process.env.TOKEN;
 const { Client, Collection, Intents, MessageEmbed } = require("discord.js");
 const fs = require("fs");
-const db = require('quick.db');
-const channels = new db.table('channels');
 const { pullMaps } = require("./osu/feed.js");
 
 const client = new Client({
@@ -14,6 +12,7 @@ const client = new Client({
 });
 
 client.once("ready", () => {
+  // Check for new maps every 5 minutes.
   setInterval(() => {
     pullMaps(client);
   }, 1000 * 60 * 5);

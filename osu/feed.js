@@ -53,11 +53,16 @@ function sendNewMap(setId, client) {
       s: setId,
       m: 3,
     })
-    .then((diffs) => {
+    .then((d) => {
+      // Sort by star rating, hardest to easiest
+      let diffs = d;
+      diffs = diffs.sort((a, b) => b.difficulty.rating - a.difficulty.rating);
+
       const title = diffs[0].title;
       const artist = diffs[0].artist;
       const creator = diffs[0].creator;
       const length = convertSeconds(diffs[0].length.total);
+      const bpm = diffs[0].bpm;
 
       mapEmbed.setTitle(`${artist} - ${title}`);
       diffs[0].approvalStatus == "Ranked"
@@ -70,7 +75,8 @@ function sendNewMap(setId, client) {
       mapEmbed.setImage(
         `https://assets.ppy.sh/beatmaps/${setId}/covers/cover.jpg`
       );
-      let desc = `\`Length: ${length}\`\n[\`Download\`](https://osu.ppy.sh/d/${setId})\n\n`;
+
+      let desc = `\`Length: ${length} | BPM: ${bpm}\`\n[\`Download\`](https://osu.ppy.sh/d/${setId})\n\n`;
       diffs.forEach((diff) => {
         const keys = diff.difficulty.size;
         if (keys >= 6) {
@@ -81,12 +87,12 @@ function sendNewMap(setId, client) {
         desc += `\`[${keys}k] ${stars}\` [\`${version}\`](https://osu.ppy.sh/b/${diff.id})\n`;
       });
       mapEmbed.setDescription(desc);
-      mapEmbed.setFooter({
-        text: diffs[0].raw_approvedDate,
-      });
+      mapEmbed.setTimestamp();
+
       if (has6kplus == false) {
         return;
       }
+
       channel.send({
         embeds: [mapEmbed],
       });
