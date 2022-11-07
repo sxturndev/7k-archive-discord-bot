@@ -6,7 +6,7 @@ const { MessageEmbed } = require("discord.js");
 const osuKey = process.env.OSU_API;
 const osuApi = new osu.Api(osuKey);
 const pushedBeatmaps = new db.table("pushedBeatmaps");
-const feedChannel = new db.table('channels').get("feed_channel");
+const feedChannel = process.env.FEED_CHANNEL;
 
 // Convert seconds to MM:SS
 function convertSeconds(s) {
