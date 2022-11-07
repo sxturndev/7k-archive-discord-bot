@@ -1,38 +1,12 @@
-const { SlashCommandBuilder } = require("@discordjs/builders");
+require('dotenv').config();
+const { SlashCommandBuilder } = require('@discordjs/builders');
+const inviteLink = process.env.ARCHIVE;
 
 module.exports = {
-  data: new SlashCommandBuilder()
-    .setName("archive")
-    .setDescription("Archives a channel."),
-  async execute(interaction) {
-    const channel = interaction.channel;
-    const hasPerms = interaction.member.permissions.has("ADMINISTRATOR");
-    if (!hasPerms)
-      return interaction.reply({
-        content: "You do not have permission to do this!",
-        ephemeral: true,
-      });
-    interaction
-      .reply("Are you sure you want to archive this channel?")
-      .then(() => {
-        const filter = (m) => interaction.user.id == m.author.id;
-        interaction.channel
-          .awaitMessages({ filter, time: 15000, max: 1, errors: ["time"] })
-          .then((message) => {
-            if (message.first().content.toLowerCase() === "yes") {
-              channel.permissionOverwrites
-                .edit(channel.guild.roles.everyone, { VIEW_CHANNEL: false })
-                .catch(err => console.error(err));
-              interaction.followUp("Archived this channel.");
-            } else if (message.first().content.toLowerCase() === "no") {
-              interaction.followUp("Cancelled.");
-            }
-          })
-          .catch(() => {
-            interaction.followUp(
-              "You didn't answer in time, please respond with 'yes'. Cancelled."
-            );
-          });
-      });
-  },
+	data: new SlashCommandBuilder()
+		.setName('archive')
+		.setDescription('Posts the invite link to the 7k archive resource server.'),
+	async execute(interaction) {
+		inviteLink ? interaction.reply(`7k archive resource server: ${inviteLink}`) : interaction.reply('Invite link not set.');
+	},
 };

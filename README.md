@@ -1,5 +1,5 @@
 # 7k-archive-discord-bot
-A discord.js v13 bot created for the [7k archive.](https://discord.gg/XCV3bs7RFt)
+A discord.js v13 bot created for the [7k archive hub](https://discord.gg/XCV3bs7RFt)
 
 ---
 
@@ -16,7 +16,7 @@ A discord.js v13 bot created for the [7k archive.](https://discord.gg/XCV3bs7RFt
 ### Misc/Useful Commands
 - [x] /stats - Display an embed about bot statistics e.g. uptime & resource usage.
 - [x] /invite - Returns an invite link to the server.
-- [ ] /archive - Returns a link to the 7k archive resource server.
+- [x] /archive - Returns a link to the 7k archive resource server.
 ---
 
 ## Development and Contributing
