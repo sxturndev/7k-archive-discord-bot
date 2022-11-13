@@ -1,7 +1,5 @@
 const { SlashCommandBuilder } = require("@discordjs/builders");
 const { MessageEmbed } = require("discord.js");
-const fs = require("fs");
-const db = require("quick.db");
 const humanizeDuration = require("humanize-duration");
 
 module.exports = {
