@@ -6,7 +6,7 @@ A discord.js v13 bot created for the [7k archive hub](https://discord.gg/XCV3bs7
 ## Planned Features
 
 - [x] Ranked/Loved map feed for 6k+ [osu!api v1](https://github.com/ppy/osu-api/wiki)
-- [ ] FAQ Embeds (Common terminology, pattern glossary)
+- [x] FAQ Embeds (Common terminology, pattern glossary)
 - [ ] NPS Graph/Statistics for uploaded .osu files.
 - [ ] Embeds/Commands for easy retrieval of resources
   - [ ] /packs {coro, beginner, converts, etc.}
